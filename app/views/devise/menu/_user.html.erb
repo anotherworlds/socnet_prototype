@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+  <p>
+    Logged in as <b><%= current_user.email %></b>
+  </p>
+
+  <p>
+    <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+  </p>
+<% else %>
+  <p>
+    New to socnet? <%= link_to 'Register!', new_user_registration_path %>
+  </p>
+
+  <p>
+    Already registered? <%= link_to 'Log in!', new_user_session_path %>
+  </p>
+<% end %>
