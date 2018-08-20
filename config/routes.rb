@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :articles
   #devise_for :users
-  devise_for :users, controllers: { sessions: 'users/sessions', registraions: 'users/registrations' }
+  devise_for :users, controllers: { sessions: 'users/sessions', registraions: 'users/registrations' }, :path_prefix => 'dev'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'articles#index'
+  resources :users do
+    resources :articles
+  end
+  root 'users#index'
+
 end

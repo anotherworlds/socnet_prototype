@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @user = User.find_by_id(params[:user_id])
   end
 
   # GET /articles/1

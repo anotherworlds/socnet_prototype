@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </p>
+
+  <p>
+    <%= f.label :bio %>
+    <%= f.text_field :bio %>
+  </p>
+
+  <p>
+    <%= f.label :picture %>
+    <%= f.text_field :picture %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

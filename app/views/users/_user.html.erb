@@ -1,0 +1,24 @@
+<p>
+  Email: <%= link_to user.email, user_path(user.id) %>
+</p>
+
+<p>
+  Status: <%= user.status %>
+</p>
+
+<p>
+  Bio: <%= user.bio %>
+</p>
+
+<img src="<%= user.picture %>" alt="">
+
+<p>
+  <% if user_signed_in? %>
+    <% if current_user.id == user.id %>
+      <%= link_to 'edit', edit_user_path(user.id) %>
+    <% else %>
+    <% end %>
+  <% else %>
+  <% end %>
+</p>
+<hr>
